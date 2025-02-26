@@ -1,0 +1,76 @@
+/*feedback section*/
+@import url('https://fonts.googleapis.com/css?family=MuseoModerno');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background: antiquewhite;
+}
+
+.box{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.feed{
+  width: 600px;
+  background-color: rgb(247, 238, 227);
+  padding: 50px 40px;
+  height:500px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
+}
+
+label{
+  display: block;
+  margin-top:10px;
+}
+input{
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #333;
+  background-color: antiquewhite;
+  border: 2px solid rgb(145, 145, 145);
+  border-radius: 13px;
+}
+textarea{
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  width:520px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 13px;
+  background-color: antiquewhite;
+  border:2px solid rgb(145, 145, 145)
+}
+.feed-btn{
+    display:inline-block;
+    color:#111;
+    font-size:16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border: 2px solid #111;
+    padding:12px 25px;
+    transition:all .42s ease;
+    margin-left: 175px;
+}
+.feed-btn:hover{
+    background-color: #000;
+    color:#fff;
+}
+.nav img{
+  height: 100px;
+}

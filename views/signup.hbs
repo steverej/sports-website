@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/image.png" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <title>Sportec</title>
+
+  
+</head>
+
+<body>
+  <div class="nav">
+    <a href="#" class="logo"><img src="logo.png" alt=""></a>
+  </div>
+
+  <div class="container">
+    <div class="wrapper">
+      <h2>Sign Up</h2>
+      <form id="signup-form" action="/auth/register" method="POST">
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="input-box">
+          <input type="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box">
+          <input type="number" name="number" placeholder="Enter your phone number" required>
+        </div>
+        <div class="dflex">
+          <div class="input-box">
+            <input type="password" name="password" placeholder="Create password" id="password" required>
+          </div>
+          <div class="input-box">
+            <input type="password" name="confirmpassword" placeholder="Confirm password" id="confirm_password" required>
+          </div>
+        </div>
+        <div class="input-box button">
+          <input type="submit" value="Sign Up">
+        </div>
+        <div class="text">
+          <h3>Already have an account? <a href="/login">Login now</a></h3>
+        </div>
+      </form>
+
+    </div>
+    {{#if message }}
+      <h4 class="alert">{{message}}</h4>
+    {{/if}}
+  </div>
+
+  <div class="end-text">
+            <p>Copyright @2024. all rights reserved.designed by steve&sooraj</p>
+        </div>
+</body>
+</html>

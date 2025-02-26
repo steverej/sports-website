@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/image.png" type="image/x-icon">
+  <link rel="stylesheet" href="/admin.css">
+  <title>Sportec</title>
+  <header>
+            <a href="#" class="logo"><img src="logo.png"></a>
+<p>(admin login)</p>
+            <ul class="navmenu">
+                <li><a href="/home"><b>Sign out</b></a></li>
+            </ul> 
+        </header>
+
+  
+</head>
+<br><br><br>
+<body>
+  
+
+        {{!--<p>(admin login)</p>
+
+        <div class="btn">
+            <a href="/"><button type="submit">Sign Out</button></a>
+        </div>--}}
+       
+       
+    </nav>
+    {{!-- update house table --}}
+    <div class="updateform" id="updateform">
+        <div class="updatehead">
+            <h1>Update shop details</h1><img id="closeLogo" onclick="closeUpdate()" src="xmark-solid.svg" alt="">
+        </div>
+        <form class="uform" action="/auth/updateShop" method="POST">
+
+            <input type="text" name="productname" id="Iname" required>
+            <input type="number" name="price" id="Iprice" required>
+
+            <input type="hidden" id="shopUpdateId" value="" name="shopTable">
+            <div class="btnup"><button type="submit">UPDATE</button></div>
+        </form>
+    </div>
+
+    <div class="updateform" id="updatevform">
+        <div class="updatehead">
+            <h1>Update turf details</h1><img id="closeLogo" onclick="closevUpdate()" src="xmark-solid.svg" alt="">
+        </div>
+        <form class="uform" action="/auth/updateTurf" method="POST">
+
+            <input type="name" name="name" id="name" required>
+            <input type="date" name="date" id="date" required>
+            <input type="time" name="time" id="time" required>
+            <input type="slot" name="slot" id="slot" required>
+
+            <input type="hidden" id="turfUpdateId" value="" name="turfTable">
+            <div class="btnup"><button type="submit">UPDATE</button></div>
+        </form>
+    </div>
+
+    <div class="updateform" id="updatevform">
+        <div class="updatehead">
+            <h1>Update turf details</h1><img id="closeLogo" onclick="closevUpdate()" src="xmark-solid.svg" alt="">
+        </div>
+        <form class="uform" action="/auth/updateTurf" method="POST">
+
+            <input type="name" name="name" id="name" required>
+            <input type="date" name="date" id="date" required>
+            <input type="time" name="time" id="time" required>
+            <input type="slot" name="slot" id="slot" required>
+
+            <input type="hidden" id="turfUpdateId" value="" name="turfTable">
+            <div class="btnup"><button type="submit">UPDATE</button></div>
+        </form>
+    </div>
+
+    <div class="updateform" id="updatevform">
+        <div class="updatehead">
+            <h1>Update stadium details</h1><img id="closeLogo" onclick="closevUpdate()" src="xmark-solid.svg" alt="">
+        </div>
+        <form class="uform" action="/auth/updateStadium" method="POST">
+
+            <input type="date" name="date" id="date" required>
+            <input type="time" name="time" id="time" required>
+            <input type="number" name="duration" id="duration" required>
+            <input type="text" name="seat" id="seat" required>
+            <input type="text" name="name" id="name" required>
+
+            <input type="hidden" id="stadiumUpdateId" value="" name="stadiumTable">
+            <div class="btnup"><button type="submit">UPDATE</button></div>
+        </form>
+    </div>
+    
+
+    <div class="a-dflex">
+
+        <div class="a-container">
+            <div class="radioDiv">
+                <label for="stev">Shop</label> <input onclick="viewshop()" type="radio" name="stev" id="">
+                <label for="stev">Turf</label> <input onclick="viewturf()" type="radio" name="stev" id="">
+                <label for="stev">Stadium</label> <input onclick="viewstadium()" type="radio" name="stev" id="">
+                <label for="stev">Feedback</label> <input onclick="viewfeedback()" type="radio" name="stev" id="">
+                <label for="stev">SignUp</label> <input onclick="viewsignup()" type="radio" name="stev" id="">
+            </div>
+
+
+
+            {{!-- shop details --}}
+            <div class="appartment shop">
+                <h1>Shop Details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>email</th>
+                            <th>Address</th>
+                            <th>Pincode</th>
+                            <th>Phone</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each shopdata}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{address}}</td>
+                            <td>{{pincode}}</td>
+                            <td>{{phone}}</td>
+                            <td>
+                                <form action="/deleteAp" method="GET">
+                                    <input type="hidden" value="{{id}}" name="shopid">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {{/each}}
+
+                </table>
+            </div>
+            {{!-- turf details --}}
+            <div class="appartment turf">
+                <h1>Turf Details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Slot</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each turfData}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{date}}</td>
+                            <td>{{time}}</td>
+                            <td>{{slot}}</td>
+                            <td>
+                                <form action="/deleteTurf" method="GET">
+                                    <input type="hidden" value="{{id}}" name="turfId">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {{/each}}
+
+                </table>
+            </div>
+            {{!-- stadium details --}}
+            <div class="appartment stadium">
+                <h1>Stadium Details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Duration</th>
+                            <th>Seat</th>
+                            <th>Name</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each stadiumdata}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{date}}</td>
+                            <td>{{time}}</td>
+                            <td>{{duration}}</td>
+                            <td>{{seat}}</td>
+                            <td>{{name}}</td>
+                            <td>
+                                <form action="/deleteStadium" method="GET">
+                                    <input type="hidden" value="{{id}}" name="stadiumId">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {{/each}}
+
+                </table>
+            </div>
+
+    {{!-- feedback --}}
+            <div class="appartment feedback">
+                <h1>Feedback</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>email</th>
+                            <th>Feedback</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each feedbackdata}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{feedback}}</td>
+                            <td>
+                                <form action="/deleteFeedback" method="GET">
+                                    <input type="hidden" value="{{id}}" name="Feedback">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {{/each}}
+                    </table>
+                    </div>
+                    <br>
+                    {{!-- signup --}}
+            <div class="appartment signup">
+                <h1>Sign up Details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>name</th>
+                            <th>email</th>
+                            <th>number</th>
+                            <th>password</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each signindata}}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{name}}</td>
+                            <td>{{email}}</td>
+                            <td>{{number}}</td>
+                            <td>{{password}}</td>
+                            <td>
+                                <form action="/deletesignin" method="GET">
+                                    <input type="hidden" value="{{id}}" name="signup">
+                                    <button type="submit">DELETE</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                    {{/each}}
+
+                </table>
+            </div>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+
+</html>
